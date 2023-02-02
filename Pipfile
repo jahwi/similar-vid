@@ -6,8 +6,20 @@ name = "pypi"
 [packages]
 opencv-python = "*"
 pillow = "*"
+scikit-learn = "*"
+numpy = "*"
+imagehash = "*"
+opencv-contrib-python = "*"
+datasketch = "*"
+videohash = "*"
+common = "*"
+pims = "*"
+av = "*"
+pydub = "*"
+decord = "*"
 
 [dev-packages]
+ipykernel = "*"
 
 [requires]
 python_version = "3.11"
