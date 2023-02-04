@@ -99,7 +99,7 @@ if __name__=="__main__":
 ```
 
 ### 4. Using Aliases
-The library assigns aliases to videos. The reference video has an alias named `ref`, while the videos to be compared against are named `compare_n`, where `n` is the zero-indexed position of the video in the array. The library provides a method `get_by_alias` which allows selecting class objects by their aliases.
+The library assigns aliases to videos. The reference video has an alias named `ref`, while the videos to be compared against are named `compare_n`, where `n` is the zero-indexed position of the video in the array. The library provides a method `get_by_alias` which allows selecting class objects by their aliases. Additionally, the class has a field, named `aliases` which shows the list of aliases in use for that instance.
 
 ```python
 # import the class
@@ -114,4 +114,7 @@ if __name__=="__main__":
 
     # The above is equivalent to:
     reference_directly = video_task.ref
+
+    # list aliases, if any
+    print(video_task.aliases)
 ```
