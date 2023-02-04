@@ -40,7 +40,7 @@ pip install pillow numpy decord opencv-python imagehash
 ## Usage
 
 ### 1. Loading and Matching
-The main way to use the library is via the `Similar` class. It compares frames between a reference video and an array of at least one other video.
+The main way to use the library is via the `Similar` class. Its `match` method compares frames between a reference video and an array of at least one other video.
 
 ```python
 # import the class
@@ -57,6 +57,7 @@ if __name__=="__main__":
 
     # print matches
     print(video_task.matches)
+
 ```
 
 ### 2. Saving hashes and match data for future use
