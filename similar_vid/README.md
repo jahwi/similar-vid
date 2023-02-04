@@ -137,4 +137,4 @@ if __name__=="__main__":
 
 ### TODOs
 1. Make a pip package
-2. Add ability to compare videos files to hashes directly.
+2. Add ability to compare videos files to hashes directly..
