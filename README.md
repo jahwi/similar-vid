@@ -4,9 +4,10 @@ Similar-vid is a library for finding similar frames between videos. It is writte
 It was inspired by Netflix's "Skip Intro" feature which allows users to skip intro portions of a tv show.
 
 # Table of Contents
-+ Dependencies
-+ Installation
-+ Usage
++ [Dependencies](#dependencies)
++ [Installation](#installation)
++ [Usage](#usage)
++ [ToDo](#todos)
 
 ## Dependencies
 Similar-vid depends on the following:
@@ -19,7 +20,7 @@ Similar-vid depends on the following:
 Fortunately, there's a Pipfile that contains virtual environment configurations as will be explained below.
 
 ## Installation
-The most atraightforward way to use the library is via pipenv:
+The most straightforward way to install the library is via pipenv:
 1. Clone the repository
 2. cd to the repository and install the dependencies using pipenv
 3. activate the directory
@@ -38,9 +39,23 @@ pip install pillow numpy decord opencv-python imagehash
 ```
 
 ## Usage
+[Using the CLI](#the-cli)
 
+[Using Similar-vid within other python projects](#using-similar-vid-within-other-python-projects)
+1. [Loading and Matching](#1-loading-and-matching)
+2. [Saving hashes and match data for future use](#2-saving-hashes-and-match-data-for-future-use)
+3. [Loading saved hashes into fields](#3-loading-saved-hashes-into-fields)
+4. [Using Aliases](#4-using-aliases)
+
+### The CLI
+Within the project is also a cli wrapper around the library. It is the most straightforward way to use Similar-vid.
+```
+similar_cli.py "path_to_refrence_video_or_hash" "path_to_other_videos video_file_path another_video_file_path"
+```
+
+## Using Similar-Vid within other python projects
 ### 1. Loading and Matching
-The main way to use the library is via the `Similar` class. Its `match` method compares frames between a reference video and an array of at least one other video.
+The `Similar` class' `match` method compares frames between a reference video and an array of at least one other video.
 
 ```python
 # import the class
@@ -119,3 +134,7 @@ if __name__=="__main__":
     # list aliases, if any
     print(video_task.aliases)
 ```
+
+### TODOs
+1. Make a pip package
+2. Add ability to compare videos files to hashes directly..
