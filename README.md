@@ -50,7 +50,7 @@ pip install pillow numpy decord opencv-python imagehash
 ### The CLI
 Within the project is also a cli wrapper around the library. It is the most straightforward way to use Similar-vid.
 ```
-similar_cli.py "path_to_refrence_video_or_hash" "path_to_other_videos video_file_path another_video_file_path"
+similar_cli.py "path_to_refrence_video_or_hash" "path_to_other_video another_file_path yet_another_video_file_path"
 ```
 
 ## Using Similar-Vid within other python projects
