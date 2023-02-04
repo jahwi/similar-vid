@@ -57,7 +57,7 @@ def hasher(task):
         arr.append(np.float64(int("0x"+str(frame), 16)))
         frames += 1
     
-    print("Done")
+    print(f"Hashed {name}")
 
     return {"name": name, "hash" : arr, "location": video, "fps": vid.get_avg_fps()}
 

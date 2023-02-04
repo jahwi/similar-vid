@@ -4,19 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-opencv-python = "*"
 pillow = "*"
-scikit-learn = "*"
 numpy = "*"
 imagehash = "*"
-opencv-contrib-python = "*"
-datasketch = "*"
-videohash = "*"
-common = "*"
-pims = "*"
-av = "*"
-pydub = "*"
 decord = "*"
+opencv-python = "*"
 
 [dev-packages]
 ipykernel = "*"
