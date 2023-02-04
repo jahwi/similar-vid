@@ -27,6 +27,7 @@ The most atraightforward way to use the library is via pipenv:
 ```
 git clone https://github.com/jahwi/similar-vid.git
 cd similar-vid
+(optionally install pipenv) pip install pipenv
 pipenv install
 pipenv shell
 ```
