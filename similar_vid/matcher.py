@@ -6,7 +6,6 @@ def consecutive_clusters(numbers, threshold=1, format="seconds"):
     # Takes in a list of matching frames and returns boundaries around matching frames
     # eliminates stranded matching frames
 
-
     def span(arr):
         # returns the "length" of a list of frames
         return abs(arr[0] - arr[-1])
@@ -49,26 +48,31 @@ def matcher(dicts):
     # finds similarities between arrays of frames
 
     matches = []
+    refs = []
     dict1, dict2 = dicts[0], dicts[1]
     arr1, arr2 = np.asarray(dict1["hash"]), np.asarray(dict2["hash"])
 
 
     print(f"Matching {dict1['name']} & {dict2['name']}")
-    begin = datetime.datetime.now()
+
     for i, ref_hash in enumerate(arr1):
         comp_array = abs(arr2 - ref_hash)
         closest_frame = comp_array.argmin()
 
         closest_frame_hash = arr2[closest_frame]
+
+        if (ref_hash == 0.0) or (closest_frame_hash == 0.0):
+            print("skipping black frame")
+            continue
         diff = comp_array[closest_frame] / 64
         diff = abs(diff * 100)
-
-        if diff <= 9000000000 and diff >= 0:
+        if diff <= 90000000 and diff >= 0:
             matches.append(int(closest_frame))
+            refs.append(i)
         else:
             continue
 
-    return {f"{dict1['name']} - {dict2['name']}" : matches}
+    return (dict1["name"], dict2["name"], matches, refs)
 
 
 def match_(refdict, comp_array_of_dicts):
@@ -77,7 +81,7 @@ def match_(refdict, comp_array_of_dicts):
     tasks = [(refdict, comp_vid) for comp_vid in comp_array_of_dicts]
     with Pool() as pool:
         matches = pool.map(matcher, tasks)
-    
+
     return matches
 
     
