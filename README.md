@@ -50,10 +50,11 @@ pip install pillow numpy decord opencv-python imagehash
 ### The CLI
 Within the project is also a cli wrapper around the library. It is the most straightforward way to use Similar-vid.
 ```
-similar_cli.py "path_to_refrence_video_or_hash" "path_to_other_video another_file_path yet_another_video_file_path"
+python similar_cli.py "path_to_refrence_video_or_hash" "path_to_other_video another_file_path yet_another_video_file_path"
 ```
 
-## Using Similar-Vid within other python projects
+## The API
+The below describes using Similar-vid within other projects.
 ### 1. Loading and Matching
 The `Similar` class' `match` method compares frames between a reference video and an array of at least one other video.
 
@@ -137,4 +138,4 @@ if __name__=="__main__":
 
 ### TODOs
 1. Make a pip package
-2. Add ability to compare videos files to hashes directly..
+2. Add ability to compare video files to hashes directly.

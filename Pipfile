@@ -9,6 +9,8 @@ numpy = "*"
 imagehash = "*"
 decord = "*"
 opencv-python = "*"
+ipython = "*"
+pdoc = "*"
 
 [dev-packages]
 ipykernel = "*"

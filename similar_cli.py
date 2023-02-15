@@ -56,6 +56,6 @@ if __name__=="__main__":
 
     # match
     video_task.match(threshold=args.threshold, format=args.format)
-    for match in video_task.matches:
+    for match in video_task.matches.items():
         print(match)
 
