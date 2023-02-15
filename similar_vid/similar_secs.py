@@ -4,14 +4,6 @@ import json
 
 
 class Similar():
-    """
-    Description: Instantiates a Similar class object.
-
-    Usage: Similar(ref=video, comp_arr=[video2, video3])
-    where: the videos are paths to video files.
-
-    Returns: a Similar class instance.
-    """
 
     ref: dict
     """The reference video field. Contains the hashed reference video."""
@@ -25,6 +17,17 @@ class Similar():
 
 
     def __init__(self, *args, **kwargs):
+        """
+        Description: Instantiates a `Similar` class object.
+
+        Usage: `Similar(ref=video, comp_arr=[video2, video3])`
+        where the videos are paths to video files.
+
+        An empty instance can be created by passing no aguments to the constructor as in `Similar()`
+        This is most useful for loading saved hashfiles into fields.
+
+        Returns: a Similar class instance.
+        """
         ref = kwargs.get("ref", "")
         comp_arr = kwargs.get("comp_arr", "")
 
@@ -123,7 +126,7 @@ class Similar():
 
 def save(source_obj, target):
     """
-    Description: Saves a field to a json file.
+    Description: Saves a field to a JSON file.
 
     Usage: `save(object_or_field, destination)`
 
